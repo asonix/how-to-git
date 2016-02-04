@@ -1,6 +1,6 @@
 ## Getting Started with Git
 
-_Authors: alice, asonix_
+_Authors: alice, Nicholas Gilpin, asonix_
 
 ### What is Git?
 _Torvald's fancy undo button_
