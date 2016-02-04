@@ -1,6 +1,6 @@
 ## Getting Started with Git
 
-_Authors: Alex Huddleston, Riley Trautman_
+_Authors: Alex Huddleston, Nicholas Gilpin, Riley Trautman_
 
 ### What is Git?
 _Torvald's fancy undo button_
