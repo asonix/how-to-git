@@ -16,7 +16,7 @@ _syntax:_ `git init [[path/to/repository]]`
 
 _example:_
 ```
-asonix@asonix-gs60 ~/Downloads/Telegram Desktop 
+asonix@asonix-gs60 ~/Downloads/Telegram Desktop
 $ git init temp/
 Initialized empty Git repository in /media/windows-data/Downloads/Telegram Desktop/temp/.git/
 ```
@@ -35,8 +35,8 @@ _syntax:_ `git remote add [[remote name]] [[url]]`
 
 _example:_
 ```
-asonix@asonix-gs60 ~/git/temp 
-$ git remote add origin https://github.com/KayDevs/Project3.git 
+asonix@asonix-gs60 ~/git/temp
+$ git remote add origin https://github.com/KayDevs/Project3.git
 ```
 
 ### Cloning a Remote Repository
@@ -49,7 +49,7 @@ _syntax:_ `git clone [[https://url.of/the/repository.git]]`
 
 _example:_
 ```
-asonix@asonix-gs60 ~/git 
+asonix@asonix-gs60 ~/git
 $ git clone https://github.com/Airblader/i3.git
 Cloning into 'i3'...
 remote: Counting objects: 31250, done.
@@ -69,11 +69,11 @@ The term **branch** comes from the idea that updates to the code should be seen 
 _syntax:_ `git checkout -b [[your-branch-name]]`
 
 _example:_
-```
+  ```
 asonix@asonix-gs60 ~/git/i3 (main)
 $ git checkout -b asonixdev
 Switched to a new branch 'asonixdev'
-```
+  ```
 
 It is typically a good idea to create a new branch for each new feature you want to add. This makes managing the repository much easier in the future.
 
@@ -89,12 +89,12 @@ You may want to create different branches for different features and bugs you ar
 _syntax:_ `git checkout [[branch-name]]`
 
 _example:_
-```
+  ```
 asonix@asonix-gs60 ~/git/i3 (gaps)
 $ git checkout main
 Branch main set up to track remote branch main from origin.
 Switched to a new branch 'main'
-```
+  ```
 
 ### Updating Your Branches
 
@@ -105,7 +105,7 @@ Always `pull` before you start working on new code. It will fetch any updates th
 _syntax:_ `git pull`
 
 _example:_
-```
+  ```
 asonix@asonix-gs60 ~/git/i3 (main)
 $ git pull
 remote: Counting objects: 689, done.
@@ -113,13 +113,13 @@ remote: Total 689 (delta 319), reused 320 (delta 319), pack-reused 369
 Receiving objects: 100% (689/689), 182.78 KiB | 0 bytes/s, done.
 Resolving deltas: 100% (537/537), completed with 119 local objects.
 From https://github.com/o4dev/i3
-   c56403b..c922378  gaps       -> origin/gaps
-   31c33df..4c878f4  main     -> origin/main
- * [new tag]         4.8        -> 4.8
+  c56403b..c922378  gaps       -> origin/gaps
+  31c33df..4c878f4  main     -> origin/main
+  * [new tag]         4.8        -> 4.8
 Updating c56403b..c922378
 Fast-forward
- 232 files changed, 9378 insertions(+), 5336 deletions(-)
-```
+232 files changed, 9378 insertions(+), 5336 deletions(-)
+  ```
 
 ### Making changes
 
@@ -130,7 +130,7 @@ To check which files have been changed and need to be committed, or to see if yo
 _syntax:_ `git status`
 
 _example:_
-```
+  ```
 asonix@asonix-gs60 ~/git/i3 (main)
 $ git status
 On branch main
@@ -139,17 +139,17 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   Makefile
+  modified:   Makefile
 
 no changes added to commit (use "git add" and/or "git commit -a")
-```
+  ```
 
 If you made changes, you will need to add those changes before you can commit them so Git knows what is being tracked and what to commit. To add files, just use `git add filename.extension` where filename is the name of the file and extension is the extension, if any.
 
 ```
 asonix@asonix-gs60 ~/git/i3 (main)
-$ git add Makefile 
-```
+$ git add Makefile
+  ```
 _**PROTIP: PLEASE DON'T ADD BIN FILES LIKE "a.out" BECAUSE YOU WILL MAKE ME MAD BECAUSE I'LL HAVE TO FIX IT BECAUSE THOSE DON'T MERGE WELL.** We'll cover methods to ensure this doesn't happen later_
 
 ### Committing Changes
@@ -163,17 +163,17 @@ To commit files to the LOCAL repository, use `git commit -m "enter message here 
 _syntax:_ `git commit -m [[commit message]]`
 
 _example:_
-```
+  ```
 asonix@asonix-gs60 ~/git/i3 (main)
 $ git commit -m "test commit"
 [main ed9d6a7] test commit
- 1 file changed, 2 insertions(+)
-```
+1 file changed, 2 insertions(+)
+  ```
 
 _**PROTIP: If you don't put a message in, the thing will yell at you and not do the commit. using -a won't require a message, but I don't recommend using it unless you just really can't get the commit to work. It involves me having to go in afterwards and fix Github ruining things.**_
 
 ** Minor Troubleshooting **
-If you accidentally added a file to be tracked and want to remove it, use `git rm filename.extension ..' (and other filenames if you want to do more). If you removed a file the normal way (rm, delete, etc.), it should be added to what is being committed automatically.
+If you accidentally added a file to be tracked and want to remove it, use `git rm filename.extension ..` (and other filenames if you want to do more). If you removed a file the normal way (rm, delete, etc.), it should be added to what is being committed automatically.
 
 If you want to discard the changes you made (for example: someone else made them already and committed them, so your changes are useless now) use `git checkout --filename.extension ..`
 
@@ -200,28 +200,151 @@ From here, since we pushed changes to our branch `alicedev` _and used pull reque
 `git merge main` merges what changes are in main into the current branch, git calls this "fast-forwarding"
 
 _syntax:_
- - `git merge [[branch_with_changes]]`
- - `git merge [[branch_to_merge_into]] [[branch_with_changes]]`
+  - `git merge [[branch_with_changes]]`
+  - `git merge [[branch_to_merge_into]] [[branch_with_changes]]`
 
 _example:_
-```
+  ```
 asonix@asonix-gs60 ~/git/i3 (main)
 $ git merge main gaps
 Merge made by the 'recursive' strategy.
- 33 files changed, 680 insertions(+), 58 deletions(-)
-```
+33 files changed, 680 insertions(+), 58 deletions(-)
+  ```
 _Note: this example shows merging into main, please do not do this in any situation_
+
+### Rebasing
+
+_It comes to mind that main gets ahead of my branch a lot_
+
+Bigger projects come with faster changes. There is always someone merging something into main, and often your feature or bug fix can get left behind. This is where `git rebase` comes in. Say you have a branch with 3 commits, and main has had a commit since you created this branch. In order to apply your changes to main, you might think to merge main into your branch.
+
+There is another way, however, that doesn't add an extra commit where there doesn't need to be one. Since git keeps track of history in addition to branches, we can replay certain changes on top of a different starting point.
+
+_syntax:_
+  - `git rebase [[commit_id or branch_name]] [[commit_id or branch_name]]` for updating base on same branch
+  - `git rebase [[commit_id or branch_name]] --onto [[commit_id or branch_name]]` for updating base to new branch
+
+_example (borrowed from official documentation)_:
+  ```
+branches:
+    A---B---C topic
+   /
+  D---E---F---G main
+
+command:
+$ git rebase main topic
+
+branches:
+                A'--B'--C' topic
+               /
+  D---E---F---G main
+  ```
+[source](https://git-scm.com/docs/git-rebase)
+
+### Squashing
+
+_Commits are good, but too many can be deafening_
+
+When working on large projects, there will typically be thousands of commits across an entire team on various branches. In order to reduce the number of commits in the main branch and make it easier to find what changes introduced what features, you can squash a feature branch or bug fix branch into a single commit before merging.
+
+_syntax:_
+  - `git rebase -i [[commit_id]]` the `-i` makes it interactive
+
+The commit_id is the full hash of the last commit before the commits you want to squash together.
+
+_example:_
+  ```
+$ git checkout -b rebase-example
+$ git log
+  commit fb23fff41447f4f75d54255ff213baa783a9639b
+  Author: Riley Trautman <asonix.dev@gmail.com>
+  Date:   Thu May 12 23:36:54 2016 -0500
+
+  remove all Map.{get,put}, replace with Map.update
+
+  commit dbcafa1987d32cda1d8398947b8c1d59c7894b46
+  Author: Riley Trautman <asonix.dev@gmail.com>
+  Date:   Thu May 12 23:30:19 2016 -0500
+
+  remove unneeded nil case
+
+  commit 36a6cf5b9d62b4084d7db10c60a7ce2238110a6a
+  Author: Riley Trautman <asonix.dev@gmail.com>
+  Date:   Thu May 12 23:27:46 2016 -0500
+
+  Initial arguments shouldn't be
+  they should be an empty thing of the correct type (oops)
+
+  commit 7cbbcf4d126da3b523984146190f96e91582bd61
+  Author: Riley Trautman <asonix.dev@gmail.com>
+  Date:   Thu May 12 22:07:27 2016 -0500
+
+  Ensure node import test for multiple rounds is correct
+
+  commit aacfc213a559668eafbdfb3a4f91c427edb0f72f
+  Author: Riley Trautman <asonix.dev@gmail.com>
+  Date:   Thu May 12 22:02:12 2016 -0500
+
+  test inserting for multiple rounds
+
+  commit 4d17080ac69590a27eda74fb9e0859cf0634e143 <- We want to squash onto this one
+  Author: Riley Trautman <asonix.dev@gmail.com>
+  Date:   Thu May 12 21:57:41 2016 -0500
+
+  Fix formatting a bit
+
+  commit a3ae709c412d14a19e1b49322378372640576eae <- so we pick this as our base
+  Author: Riley Trautman <asonix.dev@gmail.com>
+  Date:   Thu May 12 21:56:26 2016 -0500
+
+  Inserting the first level of nodes works
+
+
+$ git rebase -i a3ae709c412d14a19e1b49322378372640576eae
+
+editor:
+  1 pick 4d17080 Fix formatting a bit
+  2 squash aacfc21 test inserting for multiple rounds
+  3 squash 7cbbcf4 Ensure node import test for multiple rounds is correct
+  4 squash 36a6cf5 Initial arguments shouldn't be they should be an empty thing of the correct type (oops)
+  5 squash dbcafa1 remove unneeded nil case
+  6 squash fb23fff remove all Map.{get,put}, replace with Map.update
+
+editor:
+  1 Some commit message
+  2
+  3 About what changed in this branch
+
+output:
+  [detached HEAD a8e0b22] Some commit message
+  Date: Thu May 12 21:57:41 2016 -0500
+  2 files changed, 66 insertions(+), 18 deletions(-)
+  Successfully rebased and updated refs/heads/rebase-example.
+  ```
+
+This squashed commits `4d17080` through `fb23fff` into the same commit with the message "Some commit message". We can now open a merge request from the newly-squashed branch into the release branch.
 
 ### Other Things of Note
 
+#### .gitignore
 Git provides some other features that can be very helpful. Most importantly, the `.gitignore` file. `.gitignore` keeps track of files you _do not_ want to me committed and pushed to the repository. You can add files to `.gitignore` explicitly by stating the file path in reference to the location of `.gitignore`, or by specifying splats to cover multiple files (also in reference to the location of `.gitignore`).
 
 A `.gitignore` may look like this:
-```
-a.out # to avoid commiting the compiled program
-*.o # to avoid committing other binaries
-*~ # to avoid committing backups of files
-*.swp # to avoid committing swap files (created by vim)
+  ```
+a.out           # to avoid committing the compiled program
+*.o             # to avoid committing other binaries
+*~              # to avoid committing backups of files
+*.swp           # to avoid committing swap files (created by vim)
 .clang_complete # to avoid committing local clang configurations
-tmp/* # to avoid committing anything in the local temp folder
-```
+tmp/*           # to avoid committing anything in the local temp folder
+  ```
+
+#### Stashing
+If the branch you are on is updated by someone else, you will need to pull and merge your changes before you can push. In order to avoid conflicts during the merge, you can stash your local changes and play them back after you pull.
+
+_syntax_:
+ - `git stash` for stashing your changes onto a stack
+ - `git stash pop` for popping the changes on the top of the stack back onto your branch
+
+#### Colors
+Sometimes (read: always) you want to make git output in a colorful manner because colors make things easy to read. You can easily enable this with `git --global color.ui true`
