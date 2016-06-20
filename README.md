@@ -1,6 +1,6 @@
 ## Getting Started with Git
 
-_Authors: alice, Nicholas Gilpin, asonix_
+_Authors: [Alice Werefox](https://werefox.cafe), [Nicholas Gilpin](https://github.com/nicholascgilpin), [asonix](https://git.asonix.dog/asonix)_
 
 ### What is Git?
 _Torvald's fancy undo button_
@@ -327,7 +327,7 @@ This squashed commits `4d17080` through `fb23fff` into the same commit with the 
 ### Other Things of Note
 
 #### .gitignore
-Git provides some other features that can be very helpful. Most importantly, the `.gitignore` file. `.gitignore` keeps track of files you _do not_ want to me committed and pushed to the repository. You can add files to `.gitignore` explicitly by stating the file path in reference to the location of `.gitignore`, or by specifying splats to cover multiple files (also in reference to the location of `.gitignore`).
+Git provides some other features that can be very helpful. Most importantly, the `.gitignore` file. `.gitignore` keeps track of files you _do not_ want to be committed and pushed to the repository. You can add files to `.gitignore` explicitly by stating the file path in reference to the location of `.gitignore`, or by specifying splats to cover multiple files (also in reference to the location of `.gitignore`).
 
 A `.gitignore` may look like this:
   ```
